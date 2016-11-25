@@ -97,7 +97,7 @@ extern int main(int argc, char **argv)
         return 1;
     }
 
-    sLog->outInfo(LOG_FILTER_AUTHSERVER, "%s (authserver)", _FULLVERSION);
+    sLog->outInfo(LOG_FILTER_AUTHSERVER, "MopCore547 (authserver)", _FULLVERSION);
     sLog->outInfo(LOG_FILTER_AUTHSERVER, "<Ctrl-C> to stop.\n");
     sLog->outInfo(LOG_FILTER_AUTHSERVER, "Using configuration file %s.", cfg_file);
 

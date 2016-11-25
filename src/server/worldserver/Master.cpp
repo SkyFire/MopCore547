@@ -129,7 +129,7 @@ int Master::Run()
     BigNumber seed1;
     seed1.SetRand(16 * 8);
 
-    sLog->outInfo(LOG_FILTER_WORLDSERVER, "%s (worldserver-daemon)", _FULLVERSION);
+    sLog->outInfo(LOG_FILTER_WORLDSERVER, "MopCore547 (worldserver-daemon)", _FULLVERSION);
     sLog->outInfo(LOG_FILTER_WORLDSERVER, "<Ctrl-C> to stop.\n");
 
     sLog->outInfo(LOG_FILTER_WORLDSERVER, "MopCore 547");
@@ -258,7 +258,7 @@ int Master::Run()
         // go down and shutdown the server
     }
 
-    sLog->outInfo(LOG_FILTER_WORLDSERVER, "%s (worldserver-daemon) ready...", _FULLVERSION);
+    sLog->outInfo(LOG_FILTER_WORLDSERVER, "MopCore547 (worldserver-daemon) ready...", _FULLVERSION);
 
     // when the main thread closes the singletons get unloaded
     // since worldrunnable uses them, it will crash if unloaded after master
