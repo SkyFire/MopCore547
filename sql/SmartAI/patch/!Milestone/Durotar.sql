@@ -144,9 +144,9 @@ VALUES
 
 -- Condition to give credit
 DELETE FROM conditions WHERE Sourceentry = 3125 AND SourceTypeOrReferenceId = 22;
-INSERT INTO conditions (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `SourceId`, `ElseGroup`, `ConditionTypeOrReference`, `ConditionTarget`, `ConditionValue1`, `ConditionValue2`, `ConditionValue3`, `NegativeCondition`, `ErrorType`, `ErrorTextId`, `ScriptName`, `Comment`) 
+INSERT INTO conditions (`SourceTypeOrReferenceId`, `SourceGroup`, `SourceEntry`, `SourceId`, `ElseGroup`, `ConditionTypeOrReference`, `ConditionTarget`, `ConditionValue1`, `ConditionValue2`, `ConditionValue3`, `NegativeCondition`, `ErrorTextId`, `ScriptName`, `Comment`) 
 VALUES
-(22,3,3125,0,0,1,0,73673,1,0,0,0,0,'','SAI - Give kill credit when Aura');
+(22,3,3125,0,0,1,0,73673,1,0,0,0,'','SAI - Give kill credit when Aura');
 
 -- Corrupted Bloodtalon
 SET @ENTRY := 37961;
