@@ -63,7 +63,7 @@ RealmID = 1
 #        Example:     "@prefix@/share/trinitycore"
 #        Default:     "."
 
-DataDir = "."
+DataDir = "E:\Server\MoP\Repack\MopCore\Data\"
 
 #
 #    LogsDir
@@ -88,7 +88,6 @@ LogsDir = "logs"
 #        Default:     "127.0.0.1;3306;mopcore;mopcore;auth"       - (LoginDatabaseInfo)
 #                     "127.0.0.1;3306;mopcore;mopcore;characters" - (CharacterDatabaseInfo)
 #                     "127.0.0.1;3306;mopcore;mopcore;world"      - (WorldDatabaseInfo)
-
 
 LoginDatabaseInfo     = "127.0.0.1;3306;mopcore;mopcore;auth"
 CharacterDatabaseInfo = "127.0.0.1;3306;mopcore;mopcore;characters"
@@ -182,7 +181,7 @@ Compression = 1
 #                     1+  - (Enabled)
 #                     0   - (Disabled, No limit)
 
-PlayerLimit = 100
+PlayerLimit = 2000
 
 #
 #    SaveRespawnTimeImmediately
@@ -271,6 +270,14 @@ PlayerSave.Stats.MinLevel = 0
 PlayerSave.Stats.SaveOnlyOnLogout = 1
 
 #
+#    mmap.enablePathFinding
+#        Description: Enable/Disable pathfinding using mmaps - experimental
+#        Default:     0 - (Disabled)
+#                     1 - (Enabled)
+
+mmap.enablePathFinding = 1
+
+#
 #    vmap.enableLOS
 #    vmap.enableHeight
 #        Description: VMmap support for line of sight and height calculation.
@@ -305,14 +312,6 @@ vmap.petLOS = 1
 #                     0 - (Disabled, somewhat less CPU usage)
 
 vmap.enableIndoorCheck = 1
-
-#
-#    mmap.enablePathFinding
-#        Description: Enable/Disable pathfinding using mmaps - experimental
-#        Default:     0 - (Disabled)
-#                     1 - (Enabled)
-
-mmap.enablePathFinding = 1
 
 #
 #    DetectPosCollision
@@ -365,7 +364,7 @@ LogDB.Opt.ClearTime = 1209600
 #        Default:     0   - (Disabled)
 #                     10+ - (Enabled, Recommended 10+)
 
-MaxCoreStuckTime = 30
+MaxCoreStuckTime = 0
 
 #
 #    AddonChannel
@@ -692,8 +691,6 @@ CharacterCreating.Disabled = 0
 #                     128  - (Disabled, Troll)
 #                     512  - (Disabled, Blood Elf)
 #                     1024 - (Disabled, Draenei)
-#                  2097152 - (Disabled, Worgen)
-#                  8388608 - (Disabled, Pandaren)
 
 CharacterCreating.Disabled.RaceMask = 0
 
@@ -803,7 +800,7 @@ StartPlayerMoney = 0
 #        Description: Maximum honor points a character can have.
 #        Default:     4000 (currency x100)
 
-MaxHonorPoints = 4000
+MaxHonorPoints = 400000
 
 #
 #    StartHonorPoints
@@ -817,7 +814,7 @@ StartHonorPoints = 0
 # Description: Maximum justice points a character can have.
 # Default: 4000 (Currency x100)
 
-MaxJusticePoints = 4000
+MaxJusticePoints = 400000
 
 #
 # StartJusticePoints
@@ -825,6 +822,21 @@ MaxJusticePoints = 4000
 # Default: 0
 
 StartJusticePoints = 0
+
+
+#
+#    MaxArenaPoints
+#        Description: Maximum arena points a character can have.
+#        Default:     10000
+
+MaxArenaPoints = 10000
+
+#
+#    StartArenaPoints
+#        Description: Amount of arena points that characters has after creation.
+#        Default:     0
+
+StartArenaPoints = 0
 
 #
 #    RecruitAFriend.MaxLevel
@@ -866,6 +878,14 @@ InstantLogout = 1
 DisableWaterBreath = 4
 
 #
+#    DisableFatigue
+#        Disable/enable fatigue for security level (0..4) or high
+#        Default: 4 (None)
+
+DisableFatigue = 4
+
+
+#
 #    AllFlightPaths
 #        Description: Character knows all flight paths (of both factions) after creation.
 #        Default:     0 - (Disabled)
@@ -905,7 +925,7 @@ CastUnstuck = 1
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Instance.IgnoreLevel = 0
+Instance.IgnoreLevel = 1
 
 #
 #    Instance.IgnoreRaid
@@ -913,7 +933,7 @@ Instance.IgnoreLevel = 0
 #        Default:     0 - (Disabled)
 #                     1 - (Enabled)
 
-Instance.IgnoreRaid = 0
+Instance.IgnoreRaid = 1
 
 #
 #    Instance.ResetTimeHour
@@ -1091,7 +1111,7 @@ BeepAtStart = 1
 #        Example:     "Welcome to John\'s Server@This server runs on Trinity Core."
 #        Default:     "Welcome to a Trinity Core server."
 
-Motd = "The WoWSource V4"
+Motd = "Welcome to the World of Warcraft Mists of Pandaria"
 
 #
 #    Server.LoginInfo
@@ -1135,8 +1155,8 @@ DBC.EnforceItemAttributes = 1
 
 #
 #   AccountInstancesPerHour
-#        Description: Controls the max amount of different instances players can enter per hour.
-#        Default:     10
+#        Description: Controls the max amount of different instances player can enter within hour
+#        Default:     5
 
 AccountInstancesPerHour = 10
 
@@ -1451,10 +1471,10 @@ Rate.Corpse.Decay.Looted = 0.5
 #
 
 Rate.Creature.Normal.Damage          = 1
-Rate.Creature.Elite.Elite.Damage     = 1
-Rate.Creature.Elite.RARE.Damage      = 1
-Rate.Creature.Elite.RAREELITE.Damage = 1
-Rate.Creature.Elite.WORLDBOSS.Damage = 1
+Rate.Creature.Elite.Elite.Damage     = 0.2
+Rate.Creature.Elite.RARE.Damage      = 0.2
+Rate.Creature.Elite.RAREELITE.Damage = 0.2
+Rate.Creature.Elite.WORLDBOSS.Damage = 0.2
 
 #
 #    Rate.Creature.Normal.SpellDamage
@@ -1470,10 +1490,10 @@ Rate.Creature.Elite.WORLDBOSS.Damage = 1
 #                     1 - (Rate.Creature.Elite.WORLDBOSS.SpellDamage)
 
 Rate.Creature.Normal.SpellDamage          = 1
-Rate.Creature.Elite.Elite.SpellDamage     = 1
-Rate.Creature.Elite.RARE.SpellDamage      = 1
-Rate.Creature.Elite.RAREELITE.SpellDamage = 1
-Rate.Creature.Elite.WORLDBOSS.SpellDamage = 1
+Rate.Creature.Elite.Elite.SpellDamage     = 0.2
+Rate.Creature.Elite.RARE.SpellDamage      = 0.2
+Rate.Creature.Elite.RAREELITE.SpellDamage = 0.2
+Rate.Creature.Elite.WORLDBOSS.SpellDamage = 0.2
 
 #
 #    Rate.Creature.Normal.HP
@@ -1489,10 +1509,10 @@ Rate.Creature.Elite.WORLDBOSS.SpellDamage = 1
 #                     1 - (Rate.Creature.Elite.WORLDBOSS.HP)
 
 Rate.Creature.Normal.HP          = 1
-Rate.Creature.Elite.Elite.HP     = 1
-Rate.Creature.Elite.RARE.HP      = 1
-Rate.Creature.Elite.RAREELITE.HP = 1
-Rate.Creature.Elite.WORLDBOSS.HP = 1
+Rate.Creature.Elite.Elite.HP     = 0.2
+Rate.Creature.Elite.RARE.HP      = 0.2
+Rate.Creature.Elite.RAREELITE.HP = 0.2
+Rate.Creature.Elite.WORLDBOSS.HP = 0.2
 
 #
 #    ListenRange.Say
@@ -1785,22 +1805,20 @@ Visibility.GroupMode = 1
 #
 #    Visibility.Distance.Continents
 #    Visibility.Distance.Instances
-#    Visibility.Distance.Battlegrounds
-#    Visibility.Distance.Arenas
+#    Visibility.Distance.BGArenas
 #        Description: Visibility distance to see other players or gameobjects.
 #                     Visibility on continents on retail ~90 yards. In BG/Arenas ~533.
 #                     For instances default ~170.
 #                     Max limited by grid size: 533.33333
 #                     Min limit is max aggro radius (45) * Rate.Creature.Aggro
-#        Default:     90  - (Visibility.Distance.Continents)    80 Updated
-#                     170 - (Visibility.Distance.Instances)     120 Updated
-#                     533 - (Visibility.Distance.Battlegrounds) 120 Updated
-#                     533 - (Visibility.Distance.Arenas)        180 Updated
+#        Default:     90  - (Visibility.Distance.Continents)
+#                     170 - (Visibility.Distance.Instances)
+#                     533 - (Visibility.Distance.BGArenas)
 
-Visibility.Distance.Continents = 100
-Visibility.Distance.Instances = 400
-Visibility.Distance.Battlegrounds = 400
-Visibility.Distance.Arenas = 400
+Visibility.Distance.Continents = 80
+Visibility.Distance.Instances = 120
+Visibility.Distance.Battlegrounds = 120
+Visibility.Distance.Arenas = 180
 
 #
 #    Visibility.Notify.Period.OnContinents
@@ -2734,14 +2752,6 @@ PlayerDump.DisallowPaths = 1
 PlayerDump.DisallowOverwrite = 1
 
 #
-#     UI.ShowQuestLevelsInDialogs
-#        Description: Show quest levels next to quest titles in UI dialogs
-#        Example: [13] Westfall Stew
-#        Default: 0 (do not show)
-
-UI.ShowQuestLevelsInDialogs = 0
-
-#
 ###################################################################################################
 
 ###################################################################################################
@@ -2805,12 +2815,12 @@ UI.ShowQuestLevelsInDialogs = 0
 
 Appender.Console=1,3,0
 Appender.Server=2,2,0,Server.log,w
-Appender.GM=1,2,0,GM.log,w
-Appender.DBErrors=2,3,0,DBErrors.log,w
+Appender.GM=2,2,0,GM.log
+Appender.DBErrors=2,2,0,DBErrors.log
 Appender.Char=2,2,0,Char.log,w
 Appender.RA=2,2,0,RA.log
 Appender.Warden=2,4,0,Warden.log
-Appender.Chat=2,2,1,Chat.log,a
+Appender.Chat=2,2,3,Chat.log
 Appender.CharDump=2,2,0,%s.log
 Appender.Arenas=2,2,0,Arena.log
 Appender.SQLDev=2,2,0,SQLDev.log
@@ -2889,9 +2899,9 @@ Appenders=Console Server GM DBErrors Char RA Warden Chat
 #
 
 Logger.Root=0,5,Console Server
-Logger.Chat=22,2,Chat
+Logger.Chat=22,3,Chat
 Logger.DBErrors=26,5,Console Server DBErrors
-Logger.GM=27,2,Console Server GM
+Logger.GM=27,3,Console Server GM
 Logger.RA=28,3,RA
 Logger.Warden=29,4,Warden
 Logger.WorldServer=31,3,Console Server
@@ -2952,7 +2962,7 @@ Logger.Opcodes=41,6,Console Server
 #                     (Using spaces as separator).
 #        Default:     "Root Chat DBErrors GM RA Warden Character Load"
 
-Loggers=Root Chat DBErrors GM RA Warden Character Load
+Loggers=Root Chat DBErrors GM RA Warden Character Load WorldServer Opcodes
 
 #
 ###################################################################################################
@@ -3015,6 +3025,7 @@ Guild.DailyXPCap = 7807500
 #
 
 Guild.WeeklyReputationCap = 4375
+
 #
 ###################################################################################################
 
@@ -3088,10 +3099,10 @@ Currency.StartConquestPoints = 0
 #
 #    Currency.ConquestPointsDefaultWeekCap
 #        Amount of conquest points that player can earn per week
-#        Default: 1350
+#        Default: 1800
 #
 
-Currency.ConquestPointsDefaultWeekCap = 1350
+Currency.ConquestPointsDefaultWeekCap = 1800
 
 #
 #    Currency.ConquestPointsArenaReward
@@ -3167,35 +3178,40 @@ DisableRestart = 1
 ###################################################################################################
 # VIP CONFIG
 #
-#    Rate.XP.Kill.VIP
-#    Rate.XP.Quest.VIP
-#    Rate.XP.Explore.VIP
-#    Rate.Honor.VIP
-#    Rate.Reputation.Gain.VIP
-#        XP rates VIP modifier
-#        Default: 2
+#    Rate.XP.Kill.Premium
+#    Rate.XP.Quest.Premium
+#    Rate.XP.Explore.Premium
+#    Rate.Honor.Premium
+#    Rate.Reputation.Gain.Premium
+#        Description: Enables rates modifier to VIPs.
+#        Default: 1
 
-Rate.XP.Kill.VIP    		= 2
-Rate.XP.Quest.VIP   		= 2
-Rate.XP.Explore.VIP 		= 2
-Rate.Honor.Premium 			= 2
-Rate.Reputation.Gain.VIP 	= 2
+Rate.XP.Kill.Premium         = 1
+Rate.XP.Quest.Premium        = 1
+Rate.XP.Explore.Premium      = 1
+Rate.Honor.Premium           = 1
+Rate.Reputation.Gain.Premium = 1
 
-#    Vip.Debuff.Command = 1
-#    Vip.Bank.Command = 1
-#    Vip.Repair.Command = 1
+#    Vip.Debuff.Command        = 1
+#    Vip.Bank.Command          = 1
+#    Vip.Repair.Command        = 1
 #    Vip.Reset.Talents.Command = 1
-#    Vip.Taxi.Command = 1
-#    Vip.Home.Command = 1
-#    Vip.Capital.Command = 1
+#    Vip.Taxi.Command          = 1
+#    Vip.Home.Command          = 1
+#    Vip.Capital.Command       = 1
+#    Vip.Exchange.Arena.Command
 #        Description: Here you can enable or disable some VIP commands.
 #        Default: 1
 
-Vip.Debuff.Command 			= 1
-Vip.Bank.Command 			= 1
-Vip.Repair.Command 			= 1
-Vip.Reset.Talents.Command 	= 1
-Vip.Taxi.Command 			= 1
-Vip.Home.Command 			= 1
-Vip.Capital.Command 		= 1
+Vip.Debuff.Command                 = 0
+Vip.Bank.Command                   = 1
+Vip.Repair.Command                 = 0
+Vip.Reset.Talents.Command          = 0
+Vip.Taxi.Command                   = 0
+Vip.Home.Command                   = 1
+Vip.Capital.Command                = 0
+Vip.Exchange.Arena.Command         = 0
+Vip.Exchange.Frost.Command         = 0
+Vip.Rate.Exchange.Honor.In.Arena   = 1
+Vip.Rate.Exchange.Triumph.In.Frost = 1
 ###################################################################################################
